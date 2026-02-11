@@ -13,7 +13,8 @@ LABEL maintainer="CSE 25"
 # 2) change to root to install packages
 USER root
 
-RUN apt-get -y install graphviz
+RUN apt update && \
+    apt-get -y install graphviz
 
 # 3) install packages using notebook user
 USER jovyan
