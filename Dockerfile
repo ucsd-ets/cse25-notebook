@@ -14,7 +14,9 @@ LABEL maintainer="CSE 25"
 USER root
 
 RUN apt update && \
-    apt-get -y install graphviz
+    apt-get -y install graphviz && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # 3) install packages using notebook user
 USER jovyan
